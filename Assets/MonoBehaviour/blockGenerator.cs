@@ -18,7 +18,7 @@ public class blockGenerator : MonoBehaviour
     {
         //ボタンのポジション
         int px, py;
-        px = -5;
+        px = -7;
         py = 5;
         //ブロックの配置
         for(int i = 0;i< row; i++)
