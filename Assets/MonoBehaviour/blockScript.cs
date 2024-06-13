@@ -5,11 +5,19 @@ using UnityEngine;
 
 public class blockScript : MonoBehaviour
 {
-    public int score = 0;
+    public int score = 10;
     //なにかとぶつかったときビルドインメソッド
     private void OnCollisionEnter(Collision collision)
     {
-        score += 10;
+        //スコアをブロックスクリプトに追加
+        if(scoreScript.instance!=null)
+        {
+            scoreScript.instance.ScoreManeger(score);
+        }
+        else
+        {
+            Debug.LogError("インスタンスがありません");
+        }
         //ゲームオブジェクトを排除
         Destroy(gameObject);
     }

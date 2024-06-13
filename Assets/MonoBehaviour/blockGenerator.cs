@@ -10,7 +10,7 @@ public class blockGenerator : MonoBehaviour
     //ƒXƒpƒ“
     float span = 0.3f;
     int row = 4;
-    int col = 7;
+    int col = 6;
     int blockScaleX = 2;
     int blockScaleY = 1;
     // Start is called before the first frame update

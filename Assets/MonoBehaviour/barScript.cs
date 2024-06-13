@@ -5,7 +5,7 @@ using UnityEngine;
 public class barScript : MonoBehaviour
 {
     //プレイヤーの移動速度
-    public float speed = 10;
+    public float speed = 15;
     Rigidbody myRigidbody;
     // Start is called before the first frame update
     void Start()
