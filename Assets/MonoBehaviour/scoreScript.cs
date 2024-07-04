@@ -26,10 +26,6 @@ public class scoreScript : MonoBehaviour
         }
     }
     //反映されるためのメソッドを定義
-    private void Start()
-    {
-        
-    }
     //スコアを更新して、textコンポーネントに反映する
     public void ScoreManeger(int score)
     {
@@ -41,5 +37,10 @@ public class scoreScript : MonoBehaviour
     private void UpdataScoreText()
     {
         this.scoreText.GetComponent<TextMeshProUGUI>().text = "Score:"+totalScore.ToString();
+    }
+    //トータルのスコア
+    public int GetCurrentScore()
+    {
+        return totalScore;
     }
 }

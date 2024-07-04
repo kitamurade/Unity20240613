@@ -8,18 +8,21 @@ public class blockGenerator : MonoBehaviour
     //gameObjectの追加
     public GameObject blockPrefab;
     //スパン
-    float span = 0.3f;
+    float span = 0.4f;
     int row = 4;
     int col = 6;
     int blockScaleX = 2;
     int blockScaleY = 1;
+    int totalBlocks = 0;
     // Start is called before the first frame update
     void Start()
     {
         //ボタンのポジション
         int px, py;
-        px = -7;
+        px = -6;
         py = 5;
+        int scoreDefult = 0;
+        totalBlocks = row * col;
         //ブロックの配置
         for(int i = 0;i< row; i++)
         {
@@ -30,11 +33,17 @@ public class blockGenerator : MonoBehaviour
                 go.transform.position = new Vector3(px + (j * (span + blockScaleX)), py+(i*(span+blockScaleY)), 0);
             }
         }
+        scoreScript.instance.ScoreManeger(scoreDefult);
     }
 
-    // Update is called once per frame
-    void Update()
+    //ゲームクリア
+    public void BlocklDestroyed()
     {
-        
+        totalBlocks--;
+        SceneData.totalBlocks = totalBlocks;
+        if(totalBlocks<=0)
+        {
+            GameManeger.instance.EndGame(totalBlocks);
+        }
     }
 }
