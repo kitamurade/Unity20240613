@@ -29,8 +29,9 @@ public class blockGenerator : MonoBehaviour
             for(int j = 0;j< col; j++)
             {
                 //gemeObject‚Ì¶¬
-                GameObject go=Instantiate(blockPrefab);
-                go.transform.position = new Vector3(px + (j * (span + blockScaleX)), py+(i*(span+blockScaleY)), 0);
+                GameObject block=Instantiate(blockPrefab);
+                block.transform.position = new Vector3(px + (j * (span + blockScaleX)), py+(i*(span+blockScaleY)), 0);
+                block.tag = "Blocks";
             }
         }
         scoreScript.instance.ScoreManeger(scoreDefult);
